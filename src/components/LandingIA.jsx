@@ -1,18 +1,22 @@
+import Logo from "@/components/ui/Logo";
+
 export default function LandingIA() {
   return (
     <div className="min-h-screen bg-black text-white">
       <header className="sticky top-0 z-50 backdrop-blur border-b border-white/10 bg-black/60">
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-emerald-400 to-blue-500" />
-            <span className="font-semibold">VoiceAI para Peluquerías</span>
+          <div className="flex items-center gap-3">
+            <Logo size="md" className="text-emerald-400" />
+            <div className="flex flex-col">
+              <span className="font-bold text-emerald-400 text-lg">NEURASTYLE</span>
+              <span className="text-xs text-white/60">VoiceAI para Peluquerías</span>
+            </div>
           </div>
           <nav className="hidden md:flex items-center gap-6 text-sm text-white/80">
             <a href="#servicios" className="hover:text-white">Servicios</a>
             <a href="#ventajas" className="hover:text-white">Ventajas</a>
             <a href="#testimonios" className="hover:text-white">Testimonios</a>
             <a href="#agenda" className="hover:text-white">Agendar reunión</a>
-            <a href="#contacto" className="hover:text-white">Contacto</a>
           </nav>
         </div>
       </header>
@@ -274,65 +278,13 @@ export default function LandingIA() {
         </div>
       </section>
 
-      {/* CONTACTO */}
-      <section id="contacto" className="max-w-3xl mx-auto px-4 pb-24">
-        <div className="rounded-xl border border-white/10 bg-zinc-900/60 p-6">
-          <h3 className="text-xl font-semibold text-white mb-4">Solicita presupuesto o demo</h3>
-          <form className="grid md:grid-cols-2 gap-4">
-            <div>
-              <label className="block text-sm text-white/70 mb-2">Nombre</label>
-              <input 
-                type="text"
-                className="w-full px-3 py-2 rounded-lg border border-white/20 bg-black/40 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-emerald-500"
-                placeholder="Tu nombre"
-              />
-            </div>
-            <div>
-              <label className="block text-sm text-white/70 mb-2">Email</label>
-              <input 
-                type="email"
-                className="w-full px-3 py-2 rounded-lg border border-white/20 bg-black/40 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-emerald-500"
-                placeholder="tu@email.com"
-              />
-            </div>
-            <div>
-              <label className="block text-sm text-white/70 mb-2">Teléfono</label>
-              <input 
-                type="tel"
-                className="w-full px-3 py-2 rounded-lg border border-white/20 bg-black/40 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-emerald-500"
-                placeholder="+34 600 000 000"
-              />
-            </div>
-            <div>
-              <label className="block text-sm text-white/70 mb-2">Nombre del salón</label>
-              <input 
-                type="text"
-                className="w-full px-3 py-2 rounded-lg border border-white/20 bg-black/40 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-emerald-500"
-                placeholder="Mi Salón"
-              />
-            </div>
-            <div className="md:col-span-2">
-              <label className="block text-sm text-white/70 mb-2">¿Qué necesitas?</label>
-              <textarea 
-                rows={4}
-                className="w-full px-3 py-2 rounded-lg border border-white/20 bg-black/40 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-emerald-500 resize-none"
-                placeholder="Ej: Quiero WhatsApp + voz, horarios de 10-20h, servicios: corte, color, peinados…"
-              />
-            </div>
-            <div className="md:col-span-2">
-              <button 
-                type="submit"
-                className="w-full px-6 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-black font-semibold transition-colors"
-              >
-                Quiero una demo
-              </button>
-            </div>
-          </form>
-        </div>
-      </section>
 
       <footer className="border-t border-white/10 py-8 text-center text-white/60 text-sm">
-        © {new Date().getFullYear()} VoiceAI para Peluquerías
+        <div className="flex items-center justify-center gap-2 mb-2">
+          <Logo size="sm" className="text-emerald-400" />
+          <span className="font-semibold text-emerald-400">NEURASTYLE</span>
+        </div>
+        <p>© {new Date().getFullYear()} NEURASTYLE - VoiceAI para Peluquerías</p>
       </footer>
     </div>
   );
