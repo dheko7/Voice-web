@@ -1,47 +1,55 @@
 import React from 'react';
-import { Clock, Gift } from 'lucide-react';
+import { Calendar, Clock, PhoneCall } from 'lucide-react';
 
 const Urgencia = () => {
+  const pasos = [
+    {
+      icono: Calendar,
+      titulo: 'Elige el momento',
+      descripcion: 'Selecciona el día y la hora que mejor se adapte a tu agenda.'
+    },
+    {
+      icono: PhoneCall,
+      titulo: 'Cuéntanos tus metas',
+      descripcion: 'Durante la llamada revisaremos tu proceso actual y te mostraremos cómo optimizarlo.'
+    },
+    {
+      icono: Clock,
+      titulo: 'Implementación en 24h',
+      descripcion: 'Si encajamos, configuramos tu asistente y dejamos todo listo en menos de un día.'
+    }
+  ];
+
   return (
     <section className="bg-gradient-to-r from-red-500 to-pink-600 py-20">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 md:p-12">
-          {/* Iconos decorativos */}
-          <div className="flex justify-center space-x-4 mb-6">
-            <Gift className="w-8 h-8 text-white" />
-            <Clock className="w-8 h-8 text-white" />
-          </div>
-          
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-8">
-            Oferta de lanzamiento
+            Agenda una llamada personalizada
           </h2>
-          
+
           <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed">
-            Los primeros 10 negocios en solicitar demo tendrán precio reducido de por vida.
+            Reserva un espacio con nuestro equipo y descubre en detalle cómo Neurastyle puede automatizar tus citas sin perder el toque humano.
           </p>
-          
-          {/* Contador de urgencia */}
-          <div className="bg-white/20 rounded-2xl p-6 mb-8">
-            <p className="text-white text-lg mb-4">¡Solo quedan 7 plazas disponibles!</p>
-            <div className="flex justify-center space-x-2">
-              {[...Array(10)].map((_, i) => (
-                <div 
-                  key={i} 
-                  className={`w-4 h-4 rounded-full ${
-                    i < 7 ? 'bg-white' : 'bg-white/30'
-                  }`}
-                ></div>
-              ))}
-            </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left mb-10">
+            {pasos.map(({ icono: Icono, titulo, descripcion }, index) => (
+              <div key={index} className="bg-white/15 rounded-2xl p-6 h-full">
+                <Icono className="w-8 h-8 text-white mb-4" />
+                <h3 className="text-xl font-semibold text-white mb-2">{titulo}</h3>
+                <p className="text-white/80 text-base leading-relaxed">{descripcion}</p>
+              </div>
+            ))}
           </div>
-          
-          <button className="bg-white text-red-600 px-12 py-4 text-xl font-bold rounded-xl hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-2xl">
-            Reserva tu demo ahora
-          </button>
-          
-          <p className="text-white/80 text-sm mt-4">
-            * Oferta válida solo para los primeros 10 clientes
-          </p>
+
+          <a
+            href="https://calendly.com/saidjniah/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center bg-white text-red-600 px-12 py-4 text-xl font-bold rounded-xl hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-2xl"
+          >
+            Agenda con Calendly
+          </a>
         </div>
       </div>
     </section>

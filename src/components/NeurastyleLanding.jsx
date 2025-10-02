@@ -7,7 +7,6 @@ import ComoFunciona from './sections/ComoFunciona';
 import CasoExito from './sections/CasoExito';
 import Testimonios from './sections/Testimonios';
 import Integraciones from './sections/Integraciones';
-import Planes from './sections/Planes';
 import FAQ from './sections/FAQ';
 import Urgencia from './sections/Urgencia';
 import SobreNosotros from './sections/SobreNosotros';
@@ -28,7 +27,6 @@ const NeurastyleLanding = () => {
       <CasoExito />
       <Testimonios />
       <Integraciones />
-      <Planes />
       <FAQ />
       <Urgencia />
       <SobreNosotros />
